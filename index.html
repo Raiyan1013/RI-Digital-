@@ -4,220 +4,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RI Digital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400&family=Oswald:wght@600&display=swap" rel="stylesheet">
     <style>
         /* Basic Styles */
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Open Sans', sans-serif;
+            font-family: 'Lato', sans-serif;
             color: white;
-            background: linear-gradient(135deg, #2C3E50, #34495E); /* Gradient background */
+            background-image: url('https://i.postimg.cc/hG1J0mg2/S: ;creenshot-20241006-101447-One-UI-Home.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             position: relative;
-            scroll-behavior: smooth; /* Smooth scrolling */
             overflow-x: hidden; /* Prevent horizontal scroll */
-        }
-
-        /* Navigation Bar */
-        .navbar {
-            display: flex;
-            justify-content: center;
-            background-color: #34495E; /* Darker blue-gray for navbar */
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: background-color 0.3s; /* Smooth transition */
-        }
-
-        .navbar a {
-            color: #f2f2f2; /* Light gray color for links */
-            margin: 0 20px;
-            text-decoration: none;
-            font-size: 1.2em;
-            padding: 10px 15px;
-            border-radius: 5px; /* Rounded corners */
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        /* Individual hover effects */
-        .navbar a:hover {
-            background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent hover effect */
-            transform: scale(1.05);
-        }
-
-        /* Centered Logo */
-        .header-logo {
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        /* Main container to hold all content */
-        .content {
-            position: relative;
-            text-align: center;
-            z-index: 1;
-            padding-top: 80px; /* Adjust for fixed navbar */
         }
 
         /* Header section */
         header {
-            padding: 100px 20px;
-            text-align: center;
+            padding: 20px;
+            text-align: left;
+        }
+
+        header img {
+            width: auto;
+            height: auto;
+            max-width: 200px;
+            max-height: 200px;
+            display: block;
+            margin: 0;
+            position: absolute;
+            top: 20px;
+            left: 20px;
         }
 
         header h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 4em;
-            color: #f2f2f2; /* Light gray for header */
+            font-family: 'Oswald', sans-serif;
+            font-size: 4.5em;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.5);
             letter-spacing: 4px;
             text-transform: uppercase;
-            animation: pulse 1.5s infinite;
+            margin-top: 220px;
+            transition: opacity 1.3s ease-in;
         }
 
-        header p {
-            font-size: 1.4em;
-            color: #ccc; /* Light gray for subheading */
+        header .typing-effect {
+            font-size: 1.2em;
+            color: #E0E0E0;
             margin-top: 10px;
+            line-height: 1.5;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: .15em solid #E0E0E0;
+            width: 0;
+            animation: typing 4s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
         }
 
-        /* Positioned Transparent Image (Logo) */
-        .logo-image {
-            width: auto; /* Maintain aspect ratio */
-            height: auto; /* Maintain aspect ratio */
-            max-width: 150px; /* Adjust based on your image size */
-            max-height: 150px; /* Adjust based on your image size */
-            display: block; /* Center the logo */
-            margin: 0 auto; /* Center the logo */
+        /* Typing effect */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
         }
 
-        /* Section styles */
+        @keyframes blink-caret {
+            from, to {
+                border-color: transparent;
+            }
+            50% {
+                border-color: #E0E0E0;
+            }
+        }
+
+        /* Button Styles */
+        .call-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #C0C0C0; /* Crisp silver */
+            color: black;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 20px;
+            text-align: center;
+        }
+       /* Neon Glow + Blob Effect */
+      .neon-blob-button {
+        padding: 15px 32px;
+        color: white;
+        background: #111;
+        border: none;
+        font-size: 16px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        border-radius: 50px;
+        animation: blob 5s infinite ease-in-out;
+        display: inline-block;
+        box-shadow: 0 0 20px #00e7ff, 0 0 30px #00e7ff, 0 0 40px #00e7ff;
+        transition: all 0.3s ease-in-out;
+      }
+
+      /* Glow effect on hover */
+      .neon-blob-button:hover {
+        box-shadow: 0 0 30px #00e7ff, 0 0 60px #00e7ff, 0 0 90px #00e7ff;
+        transform: scale(1.1);
+      }
+
+      /* Blob effect */
+      @keyframes blob {
+        0%, 100% {
+          border-radius: 50px 20px 50px 20px;
+        }
+        50% {
+          border-radius: 20px 50px 20px 50px;
+        }
+      }
+        
+
+        .call-button:hover {
+            background-color: #B0B0B0;
+            box-shadow: 0 0 20px rgba(192, 192, 192, 0.7), 0 0 30px rgba(192, 192, 192, 0.5); /* Glow effect */
+        }
+
+        /* Other section styles */
         section {
             padding: 100px 20px;
-            text-align: center;
-            background-color: rgba(52, 73, 94, 0.9); /* Darker blue-gray with opacity for sections */
+            text-align: left;
             margin: 50px 0;
-            opacity: 0; /* Start hidden for animation */
-            transform: translateY(20px); /* Slide in effect */
-            animation: fadeInUp 0.6s forwards; /* Animation */
+            border-radius: 10px;
         }
 
         section h2 {
-            font-size: 2.5em;
-            color: #f2f2f2; /* Light gray for section headers */
+            font-family: 'Oswald', sans-serif;
+            font-size: 3em;
+            color: #ffffff;
             margin-bottom: 20px;
+            text-shadow: none;
         }
 
         section p {
-            font-size: 1.2em;
-            color: #ccc;
+            font-family: 'Lato', sans-serif;
+            font-size: 1.3em;
+            color: #C0C0C0; /* Crisp silver for paragraphs */
             max-width: 800px;
             margin: 0 auto;
+            line-height: 1.7;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
         }
 
-        /* Portfolio section */
-        .portfolio {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .portfolio-item {
-            background-color: #444; /* Card background */
-            border-radius: 10px;
-            overflow: hidden;
-            width: 300px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .portfolio-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .portfolio-item h3 {
-            margin: 10px;
-            color: #f2f2f2; /* Light gray for titles */
-        }
-
-        .portfolio-item p {
-            margin: 0 10px 10px;
-            color: #ccc;
-        }
-
-        /* Contact form */
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 300px;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: none;
-            background-color: #444; /* Dark background for form fields */
-            color: white;
-            font-size: 1em;
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus {
-            outline: 2px solid #1ABC9C; /* Turquoise outline on focus */
-        }
-
-        .btn {
-            padding: 15px 35px;
+        .highlight {
             font-size: 1.2em;
+            font-weight: bold;
             color: white;
-            background-color: #DC143C; /* Crimson button */
-            border: none;
-            cursor: pointer;
-            border-radius: 8px;
-            text-transform: uppercase;
-            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            margin-right: 15px;
+            transition: transform 0.6s ease;
+            display: inline-block;
         }
 
-        .btn:hover {
-            background-color: #F08080; /* Light Coral hover effect */
+        ul li {
+            margin-bottom: 30px;
+        }
+
+        .highlight:hover {
             transform: scale(1.1);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        /* Footer section */
         footer {
             padding: 20px 0;
-            background-color: #34495E; /* Darker footer */
+            background-color: #001F3F;
             color: lightgray;
             text-align: center;
             font-size: 0.9em;
         }
 
-        /* Keyframes for animations */
-        @keyframes pulse {
-            0% {
-                text-shadow: 0 0 10px #bdbdbd, 0 0 20px #bdbdbd, 0 0 30px #1ABC9C; /* Turquoise */
-            }
-            100% {
-                text-shadow: 0 0 20px #bdbdbd, 0 0 30px #bdbdbd, 0 0 50px #1ABC9C; /* Turquoise */
-            }
-        }
-
-        @keyframes fadeInUp {
+        @keyframes fadeIn {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(-20px);
             }
             to {
                 opacity: 1;
@@ -225,47 +196,49 @@
             }
         }
 
-        /* Social Media Icons */
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            margin-top: 10px;
-        }
-
-        .social-icons img {
-            width: 30px;
-            height: 30px;
-            margin: 0 10px;
-            transition: transform 0.3s;
-        }
-
-        .social-icons img:hover {
-            transform: scale(1.1);
+        header h1 {
+            animation: fadeIn 1.8s forwards;
         }
     </style>
 </head>
 <body>
-
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <a href="#about">About Us</a>
-        <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact Us</a>
-    </div>
 
     <!-- Main Content -->
     <div class="content">
 
         <!-- Header Section -->
         <header>
+            <img src="https://i.postimg.cc/qMf5TGJg/Photoroom-20241005-220049.png" alt="RI Digital Logo">
             <h1>RI Digital</h1>
-            <img src="https://i.postimg.cc/XYSXv1Ny/Photoroom-20241005-125617.png" alt="RI Digital Logo" class="logo-image">
-            <p>Your digital solution for modern marketing!</p>
+            <p class="typing-effect">Elevate Your Brand with Next-Gen Digital Marketing Excellence!</p>
+            <a href="#" class="call-button">Grab Your Free Call Today!</a>
         </header>
 
-        <!-- About Us Section -->
+        <!-- Who Are We Section -->
         <section id="about">
-            <h2>About Us</h2>
-            <p>Welcome to RI Digital, where creativity meets innovation! 🚀 We're not just a marketing agency; we're your passionate partners in transforming ideas into digital realities. Our dynamic team thrives on crafting unique strategies that propel your brand into the spotlight. With us, you won't just follow trends; you'll set them! Join us on this exhilarating journey to amplify your digital presence and unlock new opportunities for growth. Let’s ignite your brand’s potential together!
+            <h2>Who Are We?</h2>
+            <p>Welcome to RI Digital—where creativity and innovation collide! We are a team of passionate digital strategists, designers, and tech enthusiasts dedicated to transforming your ideas into dynamic digital experiences. At RI Digital, we thrive on pushing boundaries. We’re not just another marketing agency; we are your partners in success, ready to ignite your brand and elevate your presence in the digital landscape.</p>
+        </section>
+
+        <!-- Why Choose RI Digital Section -->
+        <section id="benefits">
+            <h2>Why Choose RI Digital?</h2>
+            <p>At RI Digital, we don’t just offer services; we ignite your potential! Here’s why teaming up with us is a game-changer for your business:</p>
+            <ul style="list-style-type: none; padding: 0; color: #E0E0E0; font-size: 1.2em;">
+                <li><span class="highlight">Expert Team:</span> Our squad of creative geniuses and industry veterans are dedicated to delivering exceptional results.</li>
+                <li><span class="highlight">Tailored Strategies:</span> We don’t believe in one-size-fits-all. Every solution is custom-crafted to meet your unique needs.</li>
+                <li><span class="highlight">Innovative Approaches:</span> We stay ahead of the curve, utilizing cutting-edge tools to keep your brand at the forefront.</li>
+                <li><span class="highlight">Results that Matter:</span> We focus on data-driven strategies that lead to real, measurable growth.</li>
+                <li><span class="highlight">Your Satisfaction, Our Mission:</span> We prioritize your vision and work closely with you to turn your dreams into reality.</li>
+            </ul>
+            <p style="font-weight: bold; font-size: 1.4em;">Join the RI Digital family and let’s embark on this thrilling journey together!</p>
+            <a>
+        </section>
+        
+        <footer>
+            <p>&copy; 2024 RI Digital. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
